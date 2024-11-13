@@ -1,2 +1,1 @@
-# Pessoal
-Artigos de proprio cunho.
+São pequenos passos na programação.
