@@ -146,7 +146,7 @@ elif 25 < media <= 60:
     print('A media de idade da equipe é de: ',media,'anos.')
 elif 60 < media:
     print('Equipe idosa.')
-    print('A media de idade da equi´pe é de: ',media, 'anos')
+    print('A media de idade da equipe é de: ',media, 'anos')
 
 """
 """

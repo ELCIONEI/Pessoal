@@ -1,4 +1,4 @@
-#Calculando a media do aluno
+#o sistema calcula a media do aluno e ja informa toda a situação para o proximo ano letivo.
 
 nota1 = float(input("Informe a nota do 1°_Bimestre: "))
 if nota1 > 10:
