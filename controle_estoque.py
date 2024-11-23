@@ -2,6 +2,39 @@
 Controle de estoque.
 O sistema permitirá cadastrar,listar cadastros existententes,atualizar e remover produtos ja cadastrados do estoque
 """
+
+#A parte principal do codigo, menu de opções de acesso.
+def menu():
+    controle = ControleEstoque
+    while True:
+        print('\n---*** Controle de Estoque ***---')
+        
+        print('1. Cadastro de Produto')
+        print('2. Consultar Produto')
+        print('3. Cadastrar  no Estoque')
+        print('4. Excluir Produto')
+        print('5. Sair do Sistema')
+        opcao = input('Digite a opção Desejada: ')
+
+        if opcao == '1':
+            codigo = input('Informe o codigo do produto: ')
+            nome = input('Informe o nome do produto: ')
+            qtde = int(input('Informe a quantidade a ser cadastrada: '))
+            preco = float(input('Informe o valor do produto: '))
+        elif opcao == '2':
+            controle.consultar_produtos()
+        elif opcao == '3':
+            codigo = int(input('Informe o codigo do produto: '))
+            qtde = int(input('Informe a quantidade que deseja cadastrar: '))
+        elif opcao == '4':
+            codigo = int(input('Informe o codigo do Produto: '))
+            controle.remover_produto(codigo)
+        elif opcao == '5':
+            print('***SAINDO DO SISTEMA***')
+            break
+        else:
+            print('A sua Opcão é invalida.')
+
 class Produto:#criando a classe do produto com os atributos
     def __init__(self, codigo, nome, qtde, preco):#o _init_ para niciar o objeto na estancia local
         self.codigo = codigo
@@ -23,7 +56,7 @@ class ControleEstoque: #criando a classe do estoque
             self.produtos[codigo] = Produto(codigo, nome, qtde, preco )
             print(f"O produto '{nome}' foi cadastrado com sucesso!")
     
-    def consultar_produtos(self):#função para consultar o estoque
+    def consultar_produto(self, nome, codigo):#função para consultar o estoque
         if not self.produtos: # caso o produto consultado não exista
             print('Nenhum produto cadastrado!')
         else:
@@ -44,34 +77,5 @@ class ControleEstoque: #criando a classe do estoque
         else:
             print('Produto não localizado para remoção:!')
 
-#A parte principal do codigo, menu de opções de acesso.
-def menu():
-    controle = ControleEstoque
-    while True:
-        print('\n---*** Controle de Estoque ***---')
-        print('1. Cadastro de Produto')
-        print('2. Consultar Produto')
-        print('3. Cadastrar  no Estoque')
-        print('4. Excluir Produto')
-        print('5. Sair do Sistema')
-        opcao = input('Digite a opção Desejada')
-
-        if opcao == '1':
-            codigo = input('Informe o codigo do produto: ')
-            nome = input('Informe o nome do produto: ')
-            qtde = int(input('Informe a quantidade a ser cadastrada: '))
-            preco = float(input('Informe o valor do produto: '))
-        elif opcao == 2:
-            controle.consultar_produtos()
-        elif opcao == 3:
-            codigo = int(input('Informe o codigo do produto: '))
-            qtde = int(input('Informe a quantidade que deseja cadastrar: '))
-        elif opcao == 4:
-            codigo = int(input('Informe o codigo do Produto:'))
-            controle.remover_produto(codigo)
-        elif opcao == 5:
-            print('***SAINDO DO SISTEMA***')
-        else:
-            print('A sua Opcão é invalida.')
-if __name__ == "_main_":
-    menu()    
+if __name__ == "__main__":#permite que o codigo seja executado quando o programa python é executado como principal
+    menu()
