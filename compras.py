@@ -67,7 +67,7 @@ loja.adicionar_produto(Produto("Boné", 30.00, 20))
 
 # Menu de acesso ao sistema
 while True:
-    print("\n---*** Sistema de Compras ***---")
+    print("\n---*** NEY MAGAZINE ***---")
     print("1. Listar produtos")
     print("2. Adicionar produto ao carrinho")
     print("3. Visualizar carrinho")
@@ -94,7 +94,7 @@ while True:
     elif opcao == "4":
         loja.finalizar_compra()
     elif opcao == "5":
-        print("\nSAINDO !")
+        print("\nSAINDO ! Obrigado por comprar conosco: !")
         break
     else:
         print("\nOpção inválida. Tente novamente.")
