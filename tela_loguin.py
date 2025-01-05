@@ -1,5 +1,5 @@
 # Tela de loguin com os capmos usuario e senha.
-import tkinter as tk     #importa as bibliotecas para contrução de telas
+import tkinter as tk     #importa as bibliotecas para construção de telas
 from tkinter import messagebox
 from tkinter import PhotoImage
 
@@ -21,7 +21,7 @@ janela.title("Tela de Login")
 janela.geometry("400x300")  # Define tamanho da janela
 janela.resizable(False, False)  # Desabilita redimensionamento
 # Define cor de fundo da janela
-imagem_fundo = PhotoImage(file="https://photos.google.com/photo/AF1QipPQXga--4Dxqm1yCq7-9EAkDAKahoJW1oBPPtjh")
+
 
 
 tk.Label(janela, text="Usuário:").pack(pady=10)
